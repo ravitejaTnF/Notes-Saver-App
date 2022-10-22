@@ -9,8 +9,8 @@ opacity=".6"
 
 <app-header class="header"></app-header>
 
-<div class="router-div">
-  <router-outlet></router-outlet>
+<div class="router-div" [@rotateFlipToTop]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
 </div>
 
 <app-footer class="footer"></app-footer>

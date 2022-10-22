@@ -14,16 +14,16 @@ import { SampleNotesDetailsComponent } from './sample-notes-details/sample-notes
 import { LikednotesComponent } from './likednotes/likednotes.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 const routes: Routes = [
-  {path:'login',component:LoginComponent,canActivate:[AuthtwoGuard]},
-  {path:'signup',component:SignupComponent,canActivate:[AuthtwoGuard]},
+  {path:'login',component:LoginComponent,canActivate:[AuthtwoGuard],data:{state:'login'}},
+  {path:'signup',component:SignupComponent,canActivate:[AuthtwoGuard],data:{state:'signup'}},
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'view-notes',component:NotesListComponent,canActivate:[AuthGuard]},
-  {path:'add-notes',component:AddNotesComponent,canActivate:[AuthGuard]},
-  {path:'edit-notes/:noteId',component:EditNotesComponent,canActivate:[AuthGuard]},
-  {path:'sample-notes/:id',component:SampleNotesDetailsComponent},
-  {path:'sample-notes',component:SampleNotesComponent},
-  {path:'favourites',component:LikednotesComponent,canActivate:[AuthGuard]},
-  {path:'note-details/:id',component:NoteDetailsComponent},
+  {path:'view-notes',component:NotesListComponent,canActivate:[AuthGuard],data:{state:'viewnotes'}},
+  {path:'add-notes',component:AddNotesComponent,canActivate:[AuthGuard],data:{state:'addnotes'}},
+  {path:'edit-notes/:noteId',component:EditNotesComponent,canActivate:[AuthGuard],data:{state:'editnotes'}},
+  {path:'sample-notes/:id',component:SampleNotesDetailsComponent,data:{state:'samplenotesdetails'}},
+  {path:'sample-notes',component:SampleNotesComponent,data:{state:'samplenotes'}},
+  {path:'favourites',component:LikednotesComponent,canActivate:[AuthGuard],data:{state:'favourites'}},
+  {path:'note-details/:id',component:NoteDetailsComponent,data:{state:'notesdetails'}},
   {path:'**',component:PagenotfoundComponent}
 ];
 

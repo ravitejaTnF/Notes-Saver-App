@@ -18,7 +18,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
       ],
-      schemas:[CUSTOM_ELEMENTS_SCHEMA]
+      schemas:[CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 

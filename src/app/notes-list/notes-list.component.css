@@ -13,8 +13,12 @@ a{
 .card-body{
     padding: 32px;
 }
-a:hover{
-    filter: brightness(96%);
+.card:hover{
+    filter: brightness(90%);
+}
+#view:hover{
+    color: black;
+    font-weight: bold;
 }
 
 

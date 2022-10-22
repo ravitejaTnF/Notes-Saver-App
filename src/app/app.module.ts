@@ -26,6 +26,7 @@ import { SampleNotesDetailsComponent } from './sample-notes-details/sample-notes
 import { NgHttpLoaderComponent, NgHttpLoaderModule } from 'ng-http-loader';
 import { LikednotesComponent } from './likednotes/likednotes.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { NoteDetailsComponent } from './note-details/note-details.component';
     FormsModule,
     NgHttpLoaderModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    NgbModule
   ],
   exports:[
     HeaderComponent,
