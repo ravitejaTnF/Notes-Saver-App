@@ -71,7 +71,7 @@ export class NotesListComponent implements OnInit {
     // }
     var username = this.authService.getUserName();
     if (favType == 'unlike') {
-      let resBody = {title: noteTitle,body: noteBody,isFavourite: false};
+      let resBody = {title: noteTitle,body: noteBody,isFavourite: false,dateUpdated:new Date().toUTCString()};
       this.notesService.updateNote(noteid, resBody, username).subscribe(res => {
         this.notesData = [];
         this.reverseData = [];
@@ -81,7 +81,7 @@ export class NotesListComponent implements OnInit {
         console.log(err)
       })
     } else if (favType == 'like') {
-      let resBody = {title: noteTitle,body: noteBody,isFavourite: true}
+      let resBody = {title: noteTitle,body: noteBody,isFavourite: true,dateUpdated:new Date().toUTCString()}
       this.notesService.updateNote(noteid, resBody, username).subscribe(res => {
         this.notesData = [];
         this.reverseData = [];
