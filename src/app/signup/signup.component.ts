@@ -48,19 +48,23 @@ export class SignupComponent implements OnInit {
   }
 
   signup(formData: any) {
-    localStorage.setItem('username', formData.get('username').value);
-    const { name, email, password } = formData.value;
-    this.authService.signUp(name, email, password).pipe(
+    console.log(formData.value.username);
+    const resbody = formData.value;
+    this.authService.signUp(resbody).pipe(
       this.toast.observe({
         success: 'Signup successful',
         loading: 'Signing you up..!',
-        error: ({ message }) => `${message}`,
+        error: ({ name }) => `${name}`,
       })
     )
-      .subscribe(res => {
+      .subscribe((res: any) => {
         this.isSignup = true;
         localStorage.setItem('isSignup', this.isSignup ? 'true' : 'false');
+        localStorage.setItem('userId',res.userId);
+        localStorage.setItem('username',res.username);
         this.router.navigate(['/view-notes']);
+      }, (error: any) => {
+        console.log(error);
       })
   }
   showOrHidePassword(x: any) {
