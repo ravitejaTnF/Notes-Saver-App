@@ -25,16 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-Notes Saver App in angular
-Backend - NodeJs
-API's
-
-login - https://notes-backend-production-84c7.up.railway.app/auth/login
-signup - https://notes-backend-production-84c7.up.railway.app/auth/signup
-getAllNotes - https://notes-backend-production-84c7.up.railway.app/allNotes
-getSingleNote - https://notes-backend-production-84c7.up.railway.app/notes/:noteId
-createNewNote - https://notes-backend-production-84c7.up.railway.app/createNote
-updateNote - https://notes-backend-production-84c7.up.railway.app/notes/:noteId
-deleteNote - https://notes-backend-production-84c7.up.railway.app/notes/:noteId
-getAllFavouriteNotes - https://notes-backend-production-84c7.up.railway.app/favnotes/:userId
