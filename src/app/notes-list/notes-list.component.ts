@@ -23,8 +23,8 @@ export class NotesListComponent implements OnInit {
 
 
   getNotes() {
-    var username = this.authService.getUserName();
-    this.notesService.getNotes(username).subscribe(
+    var userId = localStorage.getItem('userId');
+    this.notesService.getNotes(userId).subscribe(
       (res:any) => {
         var notes: any = res.result;
         //pushing color as an key:value into the notes array
