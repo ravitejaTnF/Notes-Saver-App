@@ -16,12 +16,12 @@ export class NotesService {
   userID = localStorage.getItem('userId');
   getNotesUrl = '';
 
-  saveNote(title:any,noteDescription:any){
-    return this.http.post(notesUrl+'/createNote',{title:title,description:noteDescription,userId:this.userID}); 
+  saveNote(title:any,noteDescription:any,IdOfUser:any){
+    return this.http.post(notesUrl+'/createNote',{title:title,description:noteDescription,userId:IdOfUser}); 
   }
 
-  getNotes(username:any){
-    return this.http.get(notesUrl+'/notes/user/'+this.userID);
+  getNotes(userId:any){
+    return this.http.get(notesUrl+'/notes/user/'+userId);
   }
 
   deleteNote(noteId:any){

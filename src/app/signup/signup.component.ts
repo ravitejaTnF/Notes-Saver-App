@@ -48,7 +48,6 @@ export class SignupComponent implements OnInit {
   }
 
   signup(formData: any) {
-    console.log(formData.value.username);
     const resbody = formData.value;
     this.authService.signUp(resbody).pipe(
       this.toast.observe({

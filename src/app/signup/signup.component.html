@@ -5,7 +5,6 @@
             <div class="username mt-3">
                 <label for="username" class="form-label"><span class="text-danger">*</span> Username</label>
                 <input type="text" class="form-control" id="username" formControlName="username">
-                <small style="font-size: 12px;">Note: use the same username everytime you login.</small>
                 <div *ngIf="f.username.errors && f.username.touched">
                     <small *ngIf="f.username.errors['required']" class="text-danger" style="font-size: 12px;">Username is required.</small>
                     <small *ngIf="f.username.errors['minlength']" class="text-danger" style="font-size: 12px;">Username should be minimum 6 characters</small>
@@ -53,7 +52,6 @@
                     <small class="text-left">Show Password</small>
                 </div>
             </div> -->
-            <small style="font-size: 12px;" class="mt-2 text-success text-center"><strong>Just a Heads up..remember your username,email & password to login :)</strong></small>
             <div class="login-button mt-4 mb-3">
                 <button class="btn btn-primary btn-sm col-12" [disabled]="!signupForm.valid">Signup</button>
             </div>
