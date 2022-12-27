@@ -28,17 +28,13 @@ export class NotesListComponent implements OnInit {
       (res:any) => {
         var notes: any = res.result;
         //pushing color as an key:value into the notes array
-        for (const key in notes) {
+        for (const index in notes) {
           let color = Math.floor(Math.random() * 10);
-          this.notesData.push({ ...notes[key], id: key, color: this.colorsList[color] });
+          this.notesData.push({ ...notes[index], id: index, color: this.colorsList[color],updatedAt: new Date(notes[index]?.updatedAt).toLocaleString() });
         }
         //reversing the notes data to display the recent created notes first
-        for (let i = this.notesData.length - 1; i >= 0; i--) {
-          this.reverseData.push(this.notesData[i]);
-          if(this.notesData[i].isFav == true){
-            this.favnotes += 1;
-          }
-        }
+        this.reverseData = this.notesData.reverse();
+        this.favnotes = this.notesData.filter((x:any) => x.isFav == true).length;
       }
     )
   }

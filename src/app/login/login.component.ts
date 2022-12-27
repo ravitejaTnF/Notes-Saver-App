@@ -70,7 +70,12 @@ export class LoginComponent implements OnInit {
   guestUserLogin(){
     const email = 'guestuser@gmail.com';
     const password = 'Guestuser123@';
-    this.authService.login(email, password)
+    this.authService.login(email, password).pipe(
+      this.toast.observe({
+        loading:'Logging you as a GUEST user..',
+        success:'Logged in as GUEST user.'
+      })
+    )
       .subscribe(
         (res:any) => {
           if(res.status == true){
